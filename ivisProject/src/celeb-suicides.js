@@ -1,35 +1,58 @@
 //------------------------1. PREPARATION------------------------//
 //-----------------------------SVG------------------------------//
+const width = 1500;
+const height = 500;
+const margin = 5;
+const padding = 5;
+const adj = 30;
+// we are appending SVG first
+const svg = d3.select("div#container").append("svg")
+    .attr("preserveAspectRatio", "xMinYMin meet")
+    .attr("viewBox", "-"
+        + adj + " -"
+        + adj + " "
+        + (width + adj *3) + " "
+        + (height + adj*3))
+    .style("padding", padding)
+    .style("margin", margin)
+    .classed("svg-content", true);
 
-const celebSuicides = svg.append("g")
-    .attr("class", "celeb-suicides");
+const timeConv = d3.timeParse("%d-%b-%Y");
+const dataset = d3.csv("./data/testFile.csv");
 
-// celebSuicides.append("circle")
-//     .attr("cx", 50)
-//     .attr("cy", height-50)
-//     .attr("r", 10)
-//     .attr("class","point--celeb");
+dataset.then(function(data) {
+    var slices = data.columns.slice(1).map(function(id) {
+        return {
+            id: id,
+            values: data.map(function(d){
+                return {
+                    date: timeConv(d.date),
+                    name: d.celebName
+                };
+            })
+        };
+    });
+
+    const xScale = d3.scaleTime().range([0,width]);
+    xScale.domain(d3.extent(data, function(d){
+        return timeConv(d.date)}));
 
 
+    const celebSuicides = svg.selectAll()
+        .data(slices)
+        .enter()
+        .append("g")
+        .attr("class", "celeb-suicides");
 
-//-----------------------------DATA-----------------------------//
-const datasetCelebSuicides = d3.csv("./data/test.csv");
-
-datasetCelebSuicides.then(function(data) {
-    const heightDomain = d3.extent(data, d => Number(d.Height));
-
-    const xScale = d3.scaleLinear()
-        .domain(heightDomain)
-        .rangeRound([0,width])
-        .nice(5);
-
-    celebSuicides.selectAll("circle")
-        .data(data)
+    celebSuicides.selectAll("points")
+        .data(function(d) {return d.values})
         .enter()
         .append("circle")
-        .attr("cx", d => xScale(d.Height))
+        .attr("cx", function(d) { return xScale(d.date); })
         .attr("cy", 50)
-        .attr("r", 4)
-        .style("fill", "blue")
-        .text(d => d.CelebName);
+        .attr("r", 3)
+        .attr("class","point")
+        .style("opacity", 1)
+        .text(function(d) { return d.name; });
+
 });
