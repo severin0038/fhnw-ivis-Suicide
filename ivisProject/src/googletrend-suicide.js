@@ -1,7 +1,7 @@
 //------------------------1. PREPARATION------------------------//
 //-----------------------------SVG------------------------------//
 const width = 1500;
-const height = 500;
+const height = 400;
 const margin = 5;
 const padding = 5;
 const adj = 30;
@@ -11,7 +11,7 @@ const svg = d3.select("div#container").append("svg")
     .attr("viewBox", "-"
         + adj + " -"
         + adj + " "
-        + (width + adj *3) + " "
+        + (width + adj *6) + " "
         + (height + adj*3))
     .style("padding", padding)
     .style("margin", margin)
@@ -108,7 +108,7 @@ dataset.then(function(data) {
             return "translate(" + (xScale(d.value.date) + 10)
                 + "," + (yScale(d.value.measurement) + 5 )+ ")"; })
         .attr("x", 5)
-        .text(function(d) { return ("Serie ") + d.id; });
+        .text("Google Trends 'suicide'");
 
 //---------------------------POINTS-----------------------------//
     lines.selectAll("points")

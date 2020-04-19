@@ -1,26 +1,6 @@
-//------------------------1. PREPARATION------------------------//
-//-----------------------------SVG------------------------------//
-const width = 1500;
-const height = 500;
-const margin = 5;
-const padding = 5;
-const adj = 30;
-// we are appending SVG first
-const svg = d3.select("div#container").append("svg")
-    .attr("preserveAspectRatio", "xMinYMin meet")
-    .attr("viewBox", "-"
-        + adj + " -"
-        + adj + " "
-        + (width + adj *3) + " "
-        + (height + adj*3))
-    .style("padding", padding)
-    .style("margin", margin)
-    .classed("svg-content", true);
+const datasetCelebSuicides = d3.csv("./data/celeb-suicides.csv");
 
-const timeConv = d3.timeParse("%d-%b-%Y");
-const dataset = d3.csv("./data/testFile.csv");
-
-dataset.then(function(data) {
+datasetCelebSuicides.then(function(data) {
     var slices = data.columns.slice(1).map(function(id) {
         return {
             id: id,
@@ -49,10 +29,10 @@ dataset.then(function(data) {
         .enter()
         .append("circle")
         .attr("cx", function(d) { return xScale(d.date); })
-        .attr("cy", 50)
-        .attr("r", 3)
+        .attr("cy", height-30)
+        .attr("r", 4)
         .attr("class","point")
-        .style("opacity", 1)
+        .style("opacity", .5)
         .text(function(d) { return d.name; });
 
 });
