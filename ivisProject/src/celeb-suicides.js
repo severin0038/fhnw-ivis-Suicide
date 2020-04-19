@@ -29,10 +29,56 @@ datasetCelebSuicides.then(function(data) {
         .enter()
         .append("circle")
         .attr("cx", function(d) { return xScale(d.date); })
-        .attr("cy", height-30)
+        .attr("cy", 100)
         .attr("r", 4)
         .attr("class","point")
         .style("opacity", .5)
         .text(function(d) { return d.name; });
+
+    //---------------------------TOOLTIP----------------------------//
+    const tooltipCeleb = d3.select("body").append("div")
+        .attr("class", "tooltip")
+        .style("opacity", 0)
+        .style("position", "absolute");
+
+    //---------------------------EVENTS-----------------------------//
+    celebSuicides.selectAll("circles")
+        .data(function(d) { return(d.values); } )
+        .enter()
+        .append("circle")
+        .attr("cx", function(d) { return xScale(d.date); })
+        .attr("cy", 100)
+        .attr('r', 10)
+        .style("opacity", 0)
+        .on('mouseover', function(d) {
+            tooltipCeleb.transition()
+                .delay(30)
+                .duration(200)
+                .style("opacity", 1);
+            tooltipCeleb.html(d.name)
+                .style("left", (d3.event.pageX + 25) + "px")
+                .style("top", (d3.event.pageY) + "px");
+            const selection = d3.select(this).raise();
+            selection
+                .transition()
+                .delay("20")
+                .duration("200")
+                .attr("r", 6)
+                .style("opacity", 1)
+                .style("fill","#ed3700");
+        })
+        .on("mouseout", function(d) {
+            tooltipCeleb.transition()
+                .duration(100)
+                .style("opacity", 0);
+            const selection = d3.select(this);
+            selection
+                .transition()
+                .delay("20")
+                .duration("200")
+                .attr("r", 10)
+                .style("opacity", 0);
+        });
+
 
 });

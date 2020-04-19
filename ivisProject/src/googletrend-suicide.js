@@ -65,12 +65,6 @@ dataset.then(function(data) {
         return "line-"+id++;
     }
 
-//---------------------------TOOLTIP----------------------------//
-    const tooltip = d3.select("body").append("div")
-        .attr("class", "tooltip")
-        .style("opacity", 0)
-        .style("position", "absolute");
-
 //-------------------------2. DRAWING---------------------------//
 //-----------------------------AXES-----------------------------//
     svg.append("g")
@@ -121,43 +115,5 @@ dataset.then(function(data) {
         .attr("class","point")
         .style("opacity", 1);
 
-//---------------------------EVENTS-----------------------------//
-    lines.selectAll("circles")
-        .data(function(d) { return(d.values); } )
-        .enter()
-        .append("circle")
-        .attr("cx", function(d) { return xScale(d.date); })
-        .attr("cy", function(d) { return yScale(d.measurement); })
-        .attr('r', 10)
-        .style("opacity", 0)
-        .on('mouseover', function(d) {
-            tooltip.transition()
-                .delay(30)
-                .duration(200)
-                .style("opacity", 1);
-            tooltip.html(d.measurement)
-                .style("left", (d3.event.pageX + 25) + "px")
-                .style("top", (d3.event.pageY) + "px");
-            const selection = d3.select(this).raise();
-            selection
-                .transition()
-                .delay("20")
-                .duration("200")
-                .attr("r", 6)
-                .style("opacity", 1)
-                .style("fill","#ed3700");
-        })
-        .on("mouseout", function(d) {
-            tooltip.transition()
-                .duration(100)
-                .style("opacity", 0);
-            const selection = d3.select(this);
-            selection
-                .transition()
-                .delay("20")
-                .duration("200")
-                .attr("r", 10)
-                .style("opacity", 0);
-        });
 
 });
