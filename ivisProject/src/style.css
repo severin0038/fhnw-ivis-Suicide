@@ -1,64 +1,138 @@
-/* AXES */
-/* ticks */
-.axis line{
-    stroke: #706f6f;
-    stroke-width: 0.5;
-    shape-rendering: crispEdges;
+/* Basic */
+::selection {
+    background: #880000;
+    color: white;
 }
 
-/* axis contour */
-.axis path {
-    stroke: #706f6f;
-    stroke-width: 0.7;
-    shape-rendering: crispEdges;
+::-moz-selection {
+    background: #880000;
+    color: white;
 }
 
-/* axis text */
+html {
+    font-size: 18px;
+}
+
+body {
+    font-family: 'Roboto';
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #222;
+    font-weight: 300;
+    padding-top: 1rem;
+}
+
+/* Font */
 .axis text {
-    fill: #2b2929;
-    font-family: Georgia;
-    font-size: 120%;
+    font-family: 'Roboto';
 }
 
-/* LINE CHART */
+h1, h2, h3, h4 {
+    font-weight: 900;
+    max-width: 1100px;
+    line-height: 1.2;
+}
+
+h1 {
+    font-size: 5rem;
+    margin-bottom: 4rem;
+}
+
+h2 {
+    font-size: 3rem;
+}
+
+p, span, li {
+    font-size: 1.2222222222222223rem;
+}
+
+p.information {
+    font-size: 1rem;
+}
+
+.axis text, .label {
+    font-size: 0.7222222222222222rem;
+}
+
+h1 + p.information {
+    margin-top: -2.5rem;
+    margin-bottom: 4rem;
+}
+
+p, span, li {
+    font-weight: 300;
+    margin-top: 0;
+}
+
+
+/* Color */
+h1, h2, h3, h4 {
+    color: #880000;
+}
+
+.row--color {
+    background: #880000;
+}
+
+path.line-0 {
+    stroke: #880000;
+}
+
+.axis path, .axis line {
+    stroke: #222;
+}
+
+.label {
+    fill: #222;
+}
+
+p.information {
+    color: #999;
+}
+
+.row--color p, .row--color span, .row--color h1, .row--color h2, .row--color h3, .row--color h4 {
+    color: white;
+}
+
+
+/* Layout */
+main p, main span {
+    max-width: 800px;
+}
+
+.row:first-of-type {
+    padding-top: 0;
+}
+
+.row {
+    padding-top: 4.5rem;
+    padding-bottom: 4.5rem;
+}
+
+.row:not(.row--wide), .footer__inside {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.row--wide {
+    padding-left: 4.5rem;
+    padding-right: 4.5rem;
+}
+
+/* Chart */
+
+.axis line, .axis path{
+    stroke-width: 1;
+    shape-rendering: crispEdges;
+}
+
 path.line-0 {
     fill: none;
-    stroke: #ed3700;
 }
 
-path.line-1 {
-    fill: none;
-    stroke: #2b2929;
-    stroke-dasharray: 2;
-}
-
-path.line-2 {
-    fill: none;
-    stroke: #9c9c9c;
-    stroke-dasharray: 6;
-}
-
-.serie_label {
-    fill: #2b2929;
-    font-family: Georgia;
-    font-size: 80%;
-}
-
-/* TOOLTIP */
-.tooltip {
-    fill: #2b2929;
-    font-family: Georgia;
-    font-size: 150%;
-}
-
-/* POINTS */
-.point {
-    stroke: none;
-    fill: #9c9c9c;
-}
-
-.point--celeb {
-    stroke: none;
-    fill: darkgreen;
-    opacity: 1;
+/* Footer */
+.footer__inside {
+    padding-top: 4rem;
+    padding-bottom: 3rem;
 }

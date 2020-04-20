@@ -1,14 +1,39 @@
 <!DOCTYPE html>
 <head>
   <meta charset="utf-8">
-  <title>Multi Line Chart</title>
-  <link rel="stylesheet" href="src/style.css">
+  <title>Werther-Effekt</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="src/normalize.css">
+    <link rel="stylesheet" href="src/style.css">
+    <link rel="stylesheet" href="src/style-chart.css">
 </head>
 <body>
-<div id="container" class="svg-container"></div>
-<script src='lib/d3/d3.js'></script>
-<script src='lib/lodash.js'></script>
-<script src="src/googletrend-suicide.js"></script>
-<script src="src/celeb-suicides.js"></script>
-<!--<script src="src/celeb-suicides-test.js"></script>-->
+    <header></header>
+    <main>
+        <div class="row">
+            <h1>Werther-Effekt*:<br>Wenn Medien&shy;berichte<br> zu Suiziden führen</h1>
+            <p class="information">* Wikipedia: <q cite="https://de.wikipedia.org/wiki/Werther-Effekt">Als Werther-Effekt wird in der Medienwirkungsforschung, Sozialpsychologie und Soziologie die Annahme bezeichnet, dass ein kausaler Zusammenhang zwischen Suiziden, über die in den Medien ausführlich berichtet wurde, und einer Erhöhung der Suizidrate in der Bevölkerung besteht.</q></p>
+            <p>Kurze Beschreibung, um was es geht. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+        </div>
+        <div class="row row--wide">
+            <h2>Gegenüberstellung von Suiziden berühmter Personen und einer Google-Trendanalyse des Suchbegriffs «Suicide»</h2>
+            <p class="information">&#9432; Fahre über die Punkte, um zu sehen wer Suizid begangen hat.</p>
+            <div id="chart--googletrend-celebs" class="chart"></div>
+        </div>
+        <div class="row row--wide row--color">
+            <h2>Irgendein anderes Chart mit Informationen</h2>
+            <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p>
+            <div style="width: 100%; height: 450px; background: white; opacity: .9; padding: 1rem 1.5rem;"><p style="font-size: 3rem; color: #880000;">Chart</p></div>
+        </div>
+        </main>
+    <footer>
+        <div class="footer__inside">
+            <p>Informationen zum Projekt (Name, Klasse...) und Quellenangaben</p>
+        </div>
+    </footer>
+
+    <script src='lib/d3/d3.js'></script>
+    <script src='lib/lodash.js'></script>
+    <script src="src/googletrend-suicide.js"></script>
+    <script src="src/celeb-suicides.js"></script>
 </body>

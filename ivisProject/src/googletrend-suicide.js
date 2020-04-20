@@ -1,12 +1,12 @@
 //------------------------1. PREPARATION------------------------//
 //-----------------------------SVG------------------------------//
 const width = 1500;
-const height = 400;
+const height = 450;
 const margin = 5;
 const padding = 5;
 const adj = 30;
 // we are appending SVG first
-const svg = d3.select("div#container").append("svg")
+const svg = d3.select("div#chart--googletrend-celebs").append("svg")
     .attr("preserveAspectRatio", "xMinYMin meet")
     .attr("viewBox", "-"
         + adj + " -"
@@ -93,7 +93,7 @@ dataset.then(function(data) {
         .attr("d", function(d) { return line(d.values); });
 
     lines.append("text")
-        .attr("class","serie_label")
+        .attr("class","label")
         .datum(function(d) {
             return {
                 id: d.id,
