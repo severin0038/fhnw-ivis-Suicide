@@ -118,7 +118,7 @@ footer ul li::before {
     background: white;
 }
 
-p::before {
+p.information::before {
     content: "ⓘ";
     position: absolute;
     left: 0;
@@ -153,6 +153,19 @@ main p, main span, h2, h3 {
 
 .chart {
     margin-top: 5rem;
+}
+
+.help {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    padding: 1rem;
+    background: white;
+    box-shadow: 0px 20px 35px 1px rgba(0, 0, 0, 0.2);
+}
+
+.help p {
+    margin-bottom: 0;
 }
 
 /* Chart */
