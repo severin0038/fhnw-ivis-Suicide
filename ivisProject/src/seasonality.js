@@ -21,7 +21,7 @@ d3.csv("./data/suicides-seasonality-males.csv").then(function(data) {
         .range([50, width])
 
     const yScale = d3.scaleLinear()
-        .domain([600, 1100])
+        .domain([500, 1100])
         .range([height, 0])
 
     /*

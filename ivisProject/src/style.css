@@ -53,6 +53,14 @@ p, span, li {
     margin-top: 0;
 }
 
+footer p:not(.small) + p.small {
+    margin-top: .5rem;
+}
+
+footer p.small, footer a {
+    font-size: 0.8888888888888888rem;
+}
+
 p {
     margin-bottom: 1.5rem;
 }
@@ -76,8 +84,8 @@ h1, h2, h3 {
     color: #880000;
 }
 
-.row--color {
-    background: #f8f8f8;
+footer {
+    background: #880000;
 }
 
 path.line-0 {
@@ -96,6 +104,18 @@ p.information {
     color: #999;
     position: relative;
     padding-left: 1.5rem;
+}
+
+.row--color {
+    background: #f8f8f8;
+}
+
+footer p, footer h3, footer a {
+    color: white;
+}
+
+footer ul li::before {
+    background: white;
 }
 
 p::before {
@@ -148,6 +168,45 @@ path.line-0 {
 
 /* Footer */
 .footer__inside {
-    padding-top: 4rem;
-    padding-bottom: 3rem;
+    padding: 4rem 0;
+}
+
+footer .infos {
+    margin-bottom: 4rem;
+}
+
+footer h3 {
+    margin-bottom: .8rem;
+}
+
+footer p {
+    margin-bottom: 0;
+}
+
+footer ul li {
+    list-style-type: none;
+    position: relative;
+    padding-left: 1rem;
+}
+
+footer ul li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 17px;
+    height: 1px;
+    width: 9px;
+}
+
+footer a {
+    text-decoration: none;
+    -webkit-box-shadow: 0 1px 0 0 #ffffff;
+    box-shadow: 0 1px 0 0 #ffffff;
+    -webkit-transition: 300ms ease-in-out all;
+    -o-transition: 300ms ease-in-out all;
+    transition: 300ms ease-in-out all;
+}
+
+footer a:hover {
+    opacity: .8;
 }

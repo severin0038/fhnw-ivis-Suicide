@@ -37,13 +37,13 @@ dataset.then(function(data) {
         return timeConv(d.date)}));
     yScale.domain([(0), d3.max(slices, function(c) {
         return d3.max(c.values, function(d) {
-            return d.measurement + 5; });
+            return d.measurement; });
     })
     ]);
 
 //-----------------------------AXES-----------------------------//
     const yaxis = d3.axisLeft()
-        .ticks(20)
+        .ticks(5)
         .scale(yScale);
 
     const xaxis = d3.axisBottom()

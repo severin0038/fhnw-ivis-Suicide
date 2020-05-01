@@ -65,7 +65,7 @@ datasetCelebSuicides.then(function(data) {
                 .duration("200")
                 .attr("r", 6)
                 .style("opacity", 1)
-                .style("fill","#ed3700");
+                .style("fill","#880000");
         })
         .on("mouseout", function(d) {
             tooltipCeleb.transition()
