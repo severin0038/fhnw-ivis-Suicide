@@ -29,7 +29,7 @@ datasetCelebSuicides.then(function(data) {
         .enter()
         .append("circle")
         .attr("cx", function(d) { return xScale(d.date); })
-        .attr("cy", 100)
+        .attr("cy", height-35)
         .attr("r", 4)
         .attr("class","point")
         .style("opacity", .5)
@@ -47,7 +47,7 @@ datasetCelebSuicides.then(function(data) {
         .enter()
         .append("circle")
         .attr("cx", function(d) { return xScale(d.date); })
-        .attr("cy", 100)
+        .attr("cy", height-35)
         .attr('r', 10)
         .style("opacity", 0)
         .on('mouseover', function(d) {
@@ -56,8 +56,8 @@ datasetCelebSuicides.then(function(data) {
                 .duration(200)
                 .style("opacity", 1);
             tooltipCeleb.html(d.name)
-                .style("left", (d3.event.pageX + 25) + "px")
-                .style("top", (d3.event.pageY) + "px");
+                .style("left", (d3.event.pageX + 15) + "px")
+                .style("top", (d3.event.pageY + 10) + "px");
             const selection = d3.select(this).raise();
             selection
                 .transition()

@@ -2,8 +2,6 @@
 //-----------------------------SVG------------------------------//
 const width = 1500;
 const height = 450;
-const margin = 5;
-const padding = 5;
 const adj = 30;
 // we are appending SVG first
 const svg = d3.select("div#chart--googletrend-celebs").append("svg")
@@ -13,8 +11,6 @@ const svg = d3.select("div#chart--googletrend-celebs").append("svg")
         + adj + " "
         + (width + adj *6) + " "
         + (height + adj*3))
-    .style("padding", padding)
-    .style("margin", margin)
     .classed("svg-content", true);
 
 //-----------------------------DATA-----------------------------//
@@ -41,7 +37,7 @@ dataset.then(function(data) {
         return timeConv(d.date)}));
     yScale.domain([(0), d3.max(slices, function(c) {
         return d3.max(c.values, function(d) {
-            return d.measurement + 4; });
+            return d.measurement + 5; });
     })
     ]);
 
@@ -103,17 +99,5 @@ dataset.then(function(data) {
                 + "," + (yScale(d.value.measurement) + 5 )+ ")"; })
         .attr("x", 5)
         .text("Google Trends 'suicide'");
-
-//---------------------------POINTS-----------------------------//
-    lines.selectAll("points")
-        .data(function(d) {return d.values})
-        .enter()
-        .append("circle")
-        .attr("cx", function(d) { return xScale(d.date); })
-        .attr("cy", function(d) { return yScale(d.measurement); })
-        .attr("r", 1)
-        .attr("class","point")
-        .style("opacity", 1);
-
 
 });

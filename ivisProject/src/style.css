@@ -29,21 +29,32 @@ body {
 
 h1, h2, h3, h4 {
     font-weight: 900;
-    max-width: 1100px;
     line-height: 1.2;
 }
 
 h1 {
     font-size: 5rem;
     margin-bottom: 4rem;
+    max-width: 1100px;
 }
 
 h2 {
     font-size: 3rem;
 }
 
+h3 {
+    font-size: 1.2777777777777777rem;
+    line-height: 1.35;;
+}
+
 p, span, li {
     font-size: 1.2222222222222223rem;
+    font-weight: 300;
+    margin-top: 0;
+}
+
+p {
+    margin-bottom: 1.5rem;
 }
 
 p.information {
@@ -59,19 +70,14 @@ h1 + p.information {
     margin-bottom: 4rem;
 }
 
-p, span, li {
-    font-weight: 300;
-    margin-top: 0;
-}
-
 
 /* Color */
-h1, h2, h3, h4 {
+h1, h2, h3 {
     color: #880000;
 }
 
 .row--color {
-    background: #880000;
+    background: #f8f8f8;
 }
 
 path.line-0 {
@@ -88,15 +94,20 @@ path.line-0 {
 
 p.information {
     color: #999;
+    position: relative;
+    padding-left: 1.5rem;
 }
 
-.row--color p, .row--color span, .row--color h1, .row--color h2, .row--color h3, .row--color h4 {
-    color: white;
+p::before {
+    content: "ⓘ";
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: #999;
 }
-
 
 /* Layout */
-main p, main span {
+main p, main span, h2, h3 {
     max-width: 800px;
 }
 
@@ -118,6 +129,10 @@ main p, main span {
 .row--wide {
     padding-left: 4.5rem;
     padding-right: 4.5rem;
+}
+
+.chart {
+    margin-top: 5rem;
 }
 
 /* Chart */
