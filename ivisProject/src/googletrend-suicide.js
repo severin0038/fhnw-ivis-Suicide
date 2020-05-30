@@ -47,8 +47,8 @@ dataset.then(function(data) {
         .scale(yScale);
 
     const xaxis = d3.axisBottom()
-        .ticks(d3.timeMonth.every(2))
-        .tickFormat(d3.timeFormat('%b %y'))
+        .ticks(d3.timeMonth.every(3))
+        .tickFormat(d3.timeFormat('%b %Y'))
         .scale(xScale);
 
 //----------------------------LINES-----------------------------//

@@ -118,7 +118,7 @@ a:hover {
     box-shadow: 0px 1px 0px 0px #880000;
 }
 
-footer {
+footer, .tooltip {
     background: #880000;
 }
 
@@ -150,7 +150,7 @@ p.information {
     background: #f8f8f8;
 }
 
-footer p, footer h3, footer a {
+footer p, footer h3, footer a, .tooltip  {
     color: white;
 }
 
@@ -257,6 +257,11 @@ main p, main span, h2, h3 {
 
 path.line-0 {
     fill: none;
+}
+
+.tooltip {
+    padding: .3rem .5rem;
+    border-radius: 3px;
 }
 
 /* Footer */
