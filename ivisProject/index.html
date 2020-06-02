@@ -11,16 +11,15 @@
     <main>
         <div class="row">
             <h1>Durch was wird die Suizidrate beeinflusst?</h1>
-            <p>Welche Faktoren haben Einfaluss auf die Suizidrate? Dies soll nachfolgend etwas genauer erläutert werden.
-            <p>Beschreibung noch ausbauen. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.</p>
+            <p>Die Suizidrate ist  stark abhängig von diversen Faktoren. Um einzelne Einflüsse darzustellen, haben wir nachfolgende Visualisierungen erstellt.
+            <p>Wir konzentrieren uns dabei auf die drei Einflussfaktoren <b>Wohlstand</b>, <b>jahreszeitlichen Schwankungen</b> und <b>mediale Berichterstattung</b></p>
         </div>
         <div class="row row--wide row--color">
-            <h2>Werther-Effekt*: Wenn Medien&shy;berichte zu Suiziden führen</h2>
-            <p class="information">* Wikipedia: <q cite="https://de.wikipedia.org/wiki/Werther-Effekt">Als Werther-Effekt wird in der Medienwirkungsforschung, Sozialpsychologie und Soziologie die Annahme bezeichnet, dass ein kausaler Zusammenhang zwischen Suiziden, über die in den Medien ausführlich berichtet wurde, und einer Erhöhung der Suizidrate in der Bevölkerung besteht.</q></p>
-            <p>Dieses Chart zeigt eine gewisse Korrelation zwischen Suiziden berühmter Personen und der Häufigkeit des Google-Suchbegriffs «Suicide». Auch andere Ereignisse, wie die Veröffentlichung des Films Suicide Squad führen zu einer erhöhten Suchanfrage. Somit muss diese Auswertung mit Vorsicht genossen werden.</p>
-            <div id="chart--googletrend-celebs" class="chart">
-                <h3>Gegenüberstellung von Suiziden berühmter Personen<br>und einer Google-Trendanalyse des Suchbegriffs «Suicide»</h3>
-                <p class="information">Fahre über die Punkte, um zu sehen wer Suizid begangen hat.</p>
+            <h2>Wohlstand und Suizid</h2>
+            <p>Führt mehr Wohlstand zu tieferen Suizidraten? In diesem Scatterplot wird das Bruttoinlandprodukt pro Kopf und Land, farblich gruppiert nach Kontinent dargestellt.</p>
+            <div id="chart--suicidrate-bip" class="chart">
+                <h3>Suizidrate und BIP pro Kopf, Gruppierung nach Kontinent</h3>
+                <p class="information">Fahre über die Punkte, um das Land und die genauen Daten zu sehen.</p>
             </div>
         </div>
         <div class="row row--wide">
@@ -32,25 +31,26 @@
             </div>
         </div>
         <div class="row row--wide row--color">
-            <h2>Abschnittstitel</h2>
-            <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.</p>
-            <div id="chart--suicidrate-bip" class="chart">
-                <h3>Suizidrate und BIP pro Kopf, Gruppierung nach Kontinent</h3>
-                <p class="information">Fahre über die Punkte, um das Land und dien genauen Daten zu sehen.</p>
+            <h2>Werther-Effekt*: Wenn Medien&shy;berichte zu Suiziden führen</h2>
+            <p class="information">* Wikipedia: <q cite="https://de.wikipedia.org/wiki/Werther-Effekt">Als Werther-Effekt wird in der Medienwirkungsforschung, Sozialpsychologie und Soziologie die Annahme bezeichnet, dass ein kausaler Zusammenhang zwischen Suiziden, über die in den Medien ausführlich berichtet wurde, und einer Erhöhung der Suizidrate in der Bevölkerung besteht.</q></p>
+            <p>Dieses Chart zeigt eine gewisse Korrelation zwischen Suiziden berühmter Personen und der Häufigkeit des Google-Suchbegriffs «Suicide». Auch andere Ereignisse, wie die Veröffentlichung des Films Suicide Squad führen zu einer erhöhten Suchanfrage. Somit muss diese Auswertung mit Vorsicht genossen werden.</p>
+            <div id="chart--googletrend-celebs" class="chart">
+                <h3>Gegenüberstellung von Suiziden berühmter Personen<br>und einer Google-Trendanalyse des Suchbegriffs «Suicide»</h3>
+                <p class="information">Fahre über die Punkte, um zu sehen wer Suizid begangen hat.</p>
             </div>
         </div>
     </main>
     <div class="help">
         <div id="help__close" class="help__close">Hilfebox schliessen</div>
-        <h3>Sizidgedanken?<br>Hier finden Sie Hilfe</h3>
+        <h3>Suizidgedanken?<br>Hier finden Sie Hilfe:</h3>
         <h4>Beratung</h4>
-        <ul>
+        <ul class="help-list">
             <li>Dargebotene Hand, Tel. <a href="tel:143">143</a>, (<a href="https://www.143.ch/" target="_blank">143.ch</a>)</li>
             <li>Pro Juventute, Tel. <a href="tel:147">147</a>, (<a href="https://www.147.ch/" target="_blank">147.ch</a>)</li>
             <li>Kirchen (<a href="https://www.seelsorge.net/" target="_blank">seelsorge.net</a>)</li>
         </ul>
         <h4>Anlaufstellen für Suizid-Betroffene</h4>
-        <ul>
+        <ul class="help-list">
             <li>Nebelmeer – Perspektiven nach dem Suizid eines Eltern&shy;teils (<a href="https://www.nebelmeer.net/" target="_blank">nebelmeer.net</a>)</li>
             <li>Refugium – Geführte Selbst&shy;hilfe&shy;gruppen für Hinter&shy;bliebene nach Suizid (<a href="https://www.verein-refugium.ch/" target="_blank">verein-refugium.ch</a>)</li>
             <li>Verein Regenbogen Schweiz (<a href="https://www.verein-regenbogen.ch/" target="_blank">verein-regenbogen.ch</a>)</li>
@@ -74,6 +74,7 @@
                     <li><a href="https://www.ons.gov.uk/peoplepopulationandcommunity/birthsdeathsandmarriages/deaths/datasets/deathscausedbysuicidebyquarterinengland" target="_blank">Deaths caused by suicide by quarter in England</a></li>
                     <li><a href="https://apps.who.int/healthinfo/statistics/mortality/whodpms/" target="_blank">Suizidrate im Jahr 2016 in allen Ländern der Erde</a></li>
                     <li><a href="https://data.worldbank.org/indicator/NY.GDP.PCAP.CD" target="_blank">GDP per capita (current US$) 1960 - 2018</a></li>
+                    <li><a href="https://www.who.int/healthinfo/global_burden_disease/estimates/en/" target="_blank">Cause-specific mortality, 2000–2016</a></li>
                     <!--<li><a href="" target="_blank"></a></li>-->
                 </ul>
             </div>
