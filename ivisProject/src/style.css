@@ -86,6 +86,10 @@ p.information {
     font-size: 1rem;
 }
 
+p.information + p.information {
+    margin-top: -0.8rem;
+}
+
 .axis text, .label {
     font-size: 0.7222222222222222rem;
 }
@@ -270,6 +274,11 @@ main p, main span, h2, h3 {
 }
 
 /* Chart */
+
+.point {
+    stroke: none;
+    fill: #9c9c9c;
+}
 
 .axis line, .axis path{
     stroke-width: 1;

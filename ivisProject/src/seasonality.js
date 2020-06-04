@@ -1,28 +1,29 @@
-const div = d3.select('#chart--seasonality')
-const maxY = 200
+const div = d3.select('#chart--seasonality');
+const width_seasonality = 1200;
+const height_seasonality = 450;
 
 d3.csv("./data/suicides-seasonality-males.csv").then(function(data) {
 
     const svg_seasonality = div.append('svg')
-        .attr('width', width + 50)
-        .attr('height', height + 30)
+        .attr('width', width_seasonality + 50)
+        .attr('height', height_seasonality + 30)
         .append('g')
-        .attr('transform', `translate(40,5)`)
+        .attr('transform', `translate(40,5)`);
 
     /*
      * X and Y scales.
      */
     const xScale = d3.scaleLinear()
         .domain([0, 3])
-        .range([50, width])
+        .range([50, width_seasonality]);
 
     const xScaleQuarter = d3.scalePoint()
         .domain(["Q1", "Q2", "Q3", "Q4"])
-        .range([50, width])
+        .range([50, width_seasonality]);
 
     const yScale = d3.scaleLinear()
         .domain([500, 1100])
-        .range([height, 0])
+        .range([height_seasonality, 0]);
 
     /*
      * The function that describes how the line is drawn.
@@ -31,7 +32,7 @@ d3.csv("./data/suicides-seasonality-males.csv").then(function(data) {
      */
     const line = d3.line()
         .x((d, i) => xScale(i))
-        .y(d => yScale(d))
+        .y(d => yScale(d));
 
     /*
      * X and Y axis
@@ -43,7 +44,7 @@ d3.csv("./data/suicides-seasonality-males.csv").then(function(data) {
 
     svg_seasonality.append('g')
         .attr('class', 'x axis')
-        .attr('transform', `translate(0, ${height})`)
+        .attr('transform', `translate(0, ${height_seasonality})`)
         .call(xAxis)
 
     const yAxis = d3.axisLeft()
@@ -70,7 +71,7 @@ d3.csv("./data/suicides-seasonality-males.csv").then(function(data) {
             .style('stroke-width', 1)
             .style('fill', 'none')
             .attr('d', line)
-            .attr('class', Object.values(data[i])[0])
+            .attr('class', Object.values(data[i])[0]);
 
         /* average calculation */
         for(var j=0; j<Object.values(data[i]).length-1; j++) {
